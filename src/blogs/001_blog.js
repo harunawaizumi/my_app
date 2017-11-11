@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
-import {styles} from './styles'
 
 class Blog001 extends Component {
     constructor(props) {
@@ -10,23 +8,18 @@ class Blog001 extends Component {
         }
         //this.onExpand = this.onExpand.bind(this)
     }
-    //
-    // onExpand () {
-    //     this.props.handleExpand()
-    //     //this.props.numClicked(this.props.value)
-    // }
+
 
     render (){
         return (
             <div>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
-                Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.
-                Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
+                <a href="LINK" src={'https://qiita.com/Uuparu/private/a35af9838649822543fe'} >LINK</a>
             </div>
         )
     }
 }
+
+
 
 // not expanded: card width 50%
 // expanded: card width 100%

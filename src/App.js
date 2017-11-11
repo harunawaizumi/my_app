@@ -4,9 +4,6 @@ import {Tabs, Tab} from 'material-ui/Tabs';
 import BlogList from './blogs/index'
 import styles from './styles'
 import AboutMe from './about/index'
-import {Route, Switch} from 'react-router-dom'
-import Blog001 from './blogs/001_blog'
-import Blog002 from './blogs/002_blog'
 
 class App extends Component {
 

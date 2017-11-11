@@ -3,7 +3,6 @@ import styles from '../styles'
 import Blog001 from './001_blog'
 import Blog002 from './002_blog'
 import {Card, CardHeader, CardMedia, CardText, CardTitle} from 'material-ui'
-import {Link} from 'react-router-dom'
 
 
 class BlogList extends Component {
@@ -36,36 +35,15 @@ class BlogList extends Component {
     // }
 
 
+
     render() {
+
         return (
             <div className="App-container">
                 <h2 style={styles.headline}>Blogs</h2>
                 <h3>
                     English & Japanese Daily Story
                 </h3>
-                <Card
-                    style={this.state.expanded1 ? styles.OpenWrapper : styles.NotOpenWrapper}
-                    onExpandChange={this.handleExpand1}
-                >
-                    <CardHeader
-                        actAsExpander
-                        showExpandableButton
-                    />
-                    <CardMedia
-                        overlay={<CardTitle
-                            title="Overlay title"
-                            subtitle="Overlay subtitle"
-                            style={styles.title}
-                        />}
-                    >
-                        <img src={require('./../images/mystery-case.jpg')} alt=""/>
-
-
-                    </CardMedia>
-                    <CardText expandable>
-                        <Blog001/>
-                    </CardText>
-                </Card>
                 <Card
                     style={this.state.expanded2 ? styles.OpenWrapper : styles.NotOpenWrapper}
                     onExpandChange={this.handleExpand2}
@@ -76,8 +54,8 @@ class BlogList extends Component {
                     />
                     <CardMedia
                         overlay={<CardTitle
-                            title="Overlay title"
-                            subtitle="Overlay subtitle"
+                            title="Why we started Jimoto"
+                            subtitle="tour provider platform"
                             style={styles.title}
                         />}
                     >
@@ -87,6 +65,29 @@ class BlogList extends Component {
                     </CardMedia>
                     <CardText expandable={true}>
                         <Blog002/>
+                    </CardText>
+                </Card>
+                <Card
+                    style={this.state.expanded1 ? styles.OpenWrapper : styles.NotOpenWrapper}
+                    onExpandChange={this.handleExpand1}
+                >
+                    <CardHeader
+                        actAsExpander
+                        showExpandableButton
+                    />
+                    <CardMedia
+                        overlay={<CardTitle
+                            title="Webpack"
+                            subtitle="Let's learn webpack in a practical way"
+                            style={styles.title}
+                        />}
+                    >
+                        <img src={require('./../images/blog01_01.png')} alt=""/>
+
+
+                    </CardMedia>
+                    <CardText expandable style={{textAlign: 'left'}}>
+                        <Blog001/>
                     </CardText>
                 </Card>
             </div>

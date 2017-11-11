@@ -1,11 +1,15 @@
 
 const path = require('path');
 const webpack = require('webpack');
+const VENDOR_LIBS = [
+    'faker', 'lodash', 'react', 'react-dom', 'react-input-range',
+    'react-redux', 'react-router', 'redux', 'redux-form', 'redux-thunk'
+]
 
 module.exports = {
     entry: {
         index: './index.js',
-        vendor: ['react', 'react-dom'],
+        vendor: VENDOR_LIBS,
     },
     output: {
         filename: '[name].js',
@@ -15,7 +19,7 @@ module.exports = {
         rules: [
             {
                 test: /\.jsx?$/,
-                exclude: /(node_modules|bower_components)/,
+                exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader',
                     options: {
@@ -25,15 +29,7 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                use: [
-                    { loader: 'style-loader' },
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            modules: true
-                        }
-                    }
-                ]
+                use: ['style-loader','css-loader']
             },
             {
                 test: /\.(png|jpg|gif|svg)$/,
@@ -48,6 +44,19 @@ module.exports = {
                 ]
             }
         ]
-    }
+    },
+    plugins: [
+        new webpack.optimize.CommonsChunkPlugin({
+            name: "vendor",
+            minChunks: Infinity,
+        }),
+        fsbx.BabelPlugin({
+            test: /\.js$/,
+            config: {
+                sourceMaps: true,
+                presets: ["latest"],
+            },
+        }),
+    ]
 
 };
